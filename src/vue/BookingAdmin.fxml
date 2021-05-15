@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="bookpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookingAdminController">
+   <children>
+      <TableView fx:id="table" layoutX="43.0" layoutY="229.0" prefHeight="307.0" prefWidth="629.0" style="-fx-background-color: #f5bac3;">
+        <columns>
+          <TableColumn fx:id="clNumR" prefWidth="65.0" text="NumRes" />
+            <TableColumn fx:id="clCIN" prefWidth="77.0" text="CIN" />
+            <TableColumn fx:id="clMatricule" prefWidth="83.0" text="Matricule" />
+          <TableColumn fx:id="Date_Deb" prefWidth="95.0" text="DateDebut" />
+            <TableColumn fx:id="Date_fin" prefWidth="111.0" text="DateFin" />
+            <TableColumn fx:id="tabpaiment" prefWidth="94.0" text="TypePaiment" />
+            <TableColumn fx:id="tabMontant" prefWidth="103.0" text="Montant" />
+        </columns>
+      </TableView>
+      <Pane prefHeight="161.0" prefWidth="700.0" style="-fx-background-color: #f73e5a;">
+         <children>
+            <TextField fx:id="txtMontant" layoutX="383.0" layoutY="94.0" prefHeight="30.0" prefWidth="135.0" promptText="Montant" />
+            <DatePicker fx:id="DateSortie" layoutX="184.0" layoutY="15.0" prefHeight="30.0" prefWidth="165.0" />
+            <DatePicker fx:id="DateRetour" layoutX="184.0" layoutY="62.0" prefHeight="30.0" prefWidth="165.0" />
+            <Button fx:id="ButValide" layoutX="535.0" layoutY="27.0" mnemonicParsing="false" onAction="#saveReservation" prefHeight="35.0" prefWidth="150.0" text="Valider">
+               <font>
+                  <Font name="Kokila Bold" size="18.0" />
+               </font></Button>
+            <TextField fx:id="txtTypPai" layoutX="383.0" layoutY="31.0" prefHeight="30.0" prefWidth="135.0" promptText="TypePaiment" />
+            <ImageView fitHeight="57.0" fitWidth="71.0" layoutX="23.0" layoutY="10.0" onMouseClicked="#handletoEspAdmin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/images/flécheRetour.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtnumRes" layoutX="4.0" layoutY="96.0" prefHeight="17.0" prefWidth="110.0" promptText="NumRes" />
+            <Label layoutX="126.0" layoutY="68.0" prefHeight="17.0" prefWidth="58.0" text="Date Fin :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="24.0" text="Date début :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="but_calc_montant" layoutX="531.0" layoutY="92.0" mnemonicParsing="false" onAction="#calculDeffdate" prefHeight="35.0" prefWidth="150.0" text="Calcul Montant total">
+               <font>
+                  <Font name="Kokila Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="duree_location" layoutX="184.0" layoutY="106.0" prefHeight="30.0" prefWidth="165.0" />
+            <Label layoutX="139.0" layoutY="112.0" prefHeight="17.0" prefWidth="45.0" text="Durée :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="txtResearch" layoutX="533.0" layoutY="183.0" onAction="#RechercheReservation" prefHeight="31.0" prefWidth="139.0" promptText="Recherche" />
+      <Button fx:id="butAnnul" layoutX="180.0" layoutY="545.0" mnemonicParsing="false" onAction="#AnnulerReservation" prefHeight="43.0" prefWidth="150.0" text="Annuler">
+         <font>
+            <Font name="Kokila Bold" size="20.0" />
+         </font></Button>
+      <Button fx:id="butModif" layoutX="394.0" layoutY="544.0" mnemonicParsing="false" onAction="#UpdateReservation" prefHeight="35.0" prefWidth="150.0" text="Modifier">
+         <font>
+            <Font name="Kokila Bold" size="20.0" />
+         </font></Button>
+      <ComboBox fx:id="chooseClient" layoutX="116.0" layoutY="180.0" onMouseClicked="#CustomerCIN" prefHeight="31.0" prefWidth="139.0" promptText="N° CIN client: " />
+      <ComboBox fx:id="chooseMatricule" layoutX="268.0" layoutY="180.0" onMouseClicked="#MatriculeCarButton" prefHeight="31.0" prefWidth="149.0" promptText="Matricule :" />
+      <Label layoutX="439.0" layoutY="187.0" text="N° Réservation : ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="butAffich" layoutX="23.0" layoutY="177.0" mnemonicParsing="false" onAction="#affichetab" text="Afficher">
+         <font>
+            <Font name="Kokila Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: #d4c32f;">
+         <children>
+            <ImageView fitHeight="260.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/images/logo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <TextField fx:id="txtname" layoutX="402.0" layoutY="160.0" prefHeight="43.0" prefWidth="264.0" promptText="User Name">
+         <font>
+            <Font name="Kokila" size="20.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="txtpassword" layoutX="402.0" layoutY="237.0" prefHeight="43.0" prefWidth="264.0" promptText="Password">
+         <font>
+            <Font name="Kokila" size="20.0" />
+         </font>
+      </PasswordField>
+      <Button layoutX="402.0" layoutY="367.0" mnemonicParsing="false" onAction="#Button" onKeyTyped="#Button" prefHeight="43.0" prefWidth="264.0" text="Login">
+         <font>
+            <Font name="Kokila Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="402.0" layoutY="524.0" mnemonicParsing="false" onAction="#handle" onMouseClicked="#handle" prefHeight="43.0" prefWidth="264.0" text="Sign Up">
+         <font>
+            <Font name="Kokila Bold" size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="183.0" layoutY="22.0" prefHeight="74.0" prefWidth="503.0" text="Welcome to my application ">
+         <font>
+            <Font name="Vijaya Bold" size="53.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.03809523809523809" endY="1.0" startX="1.0" startY="1.0">
+               <stops>
+                  <Stop color="#d7bb30" />
+                  <Stop color="#d6bb31" offset="0.11683848797250858" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="452.0" layoutY="466.0" prefHeight="29.0" prefWidth="164.0" text="Don't have an account?" textFill="#a79626">
+         <font>
+            <Font name="Kokila Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="368.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../bin/images/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="368.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../bin/images/login.png" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="radio2" layoutX="544.0" layoutY="310.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="89.0" text="Customer">
+         <font>
+            <Font name="Kokila Bold" size="15.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="493.0" layoutY="108.0" prefHeight="45.0" prefWidth="82.0" text="Sign In" textAlignment="CENTER">
+         <font>
+            <Font name="Kokila Bold" size="32.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radio1" layoutX="420.0" layoutY="310.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="89.0" text="Admin">
+         <font>
+            <Font name="Kokila Bold" size="15.0" />
+         </font>
+      </RadioButton>
+   </children>
+</Pane>

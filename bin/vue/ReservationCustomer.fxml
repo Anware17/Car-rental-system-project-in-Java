@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="res_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationCustomerController">
+   <children>
+      <VBox layoutX="344.0" prefHeight="600.0" prefWidth="359.0" style="-fx-background-color: #f1d93d;" />
+      <TableView fx:id="table" layoutX="17.0" layoutY="185.0" prefHeight="342.0" prefWidth="679.0">
+        <columns>
+          <TableColumn fx:id="tabnum" prefWidth="51.0" text="N° Réservation" />
+            <TableColumn fx:id="tabcin" minWidth="0.0" prefWidth="84.0" text="CIN" />
+            <TableColumn fx:id="tabmat" prefWidth="98.0" text="Matricule" />
+            <TableColumn fx:id="tabDD" prefWidth="102.0" text="Date_Début" />
+            <TableColumn fx:id="tabDF" prefWidth="99.0" text="Date_Fin" />
+            <TableColumn fx:id="tabType" prefWidth="114.0" text="Type_Paiement" />
+            <TableColumn fx:id="tabPrice" minWidth="0.0" prefWidth="130.0" text="Montant total à payer" />
+        </columns>
+      </TableView>
+      <Label layoutX="251.0" layoutY="46.0" prefHeight="58.0" prefWidth="394.0" text="Mes Réservations" textAlignment="CENTER">
+         <font>
+            <Font name="Gabriola" size="48.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="butRetour" fitHeight="64.0" fitWidth="82.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleRetour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../bin/images/flécheRetour.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtsearch" layoutX="264.0" layoutY="132.0" prefHeight="30.0" prefWidth="210.0" promptText="Recherche" />
+      <Label fx:id="lab_cherch" layoutX="198.0" layoutY="135.0" text="N° CIN :">
+         <font>
+            <Font name="Kokila Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="butaffich" layoutX="87.0" layoutY="135.0" mnemonicParsing="false" onAction="#affiche_tab" text="Afficher" />
+   </children>
+</Pane>
